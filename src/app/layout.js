@@ -26,7 +26,8 @@ import './globals.css'
 import Providers from '@/components/Providers'
 
 // const BASE_URL = 'https://soilahoudine.com' // change quand tu auras ton domaine
-const BASE_URL = process.env.NEXTAUTH_URL ?? 'http://localhost:3000'
+// const BASE_URL = process.env.NEXTAUTH_URL ?? 'http://localhost:3000'
+const BASE_URL = process.env.NEXTAUTH_URL || 'https://ammar-2.vercel.app'
 
 export const metadata = {
   metadataBase: new URL(BASE_URL),
