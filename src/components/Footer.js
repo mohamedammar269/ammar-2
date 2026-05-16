@@ -105,7 +105,7 @@ export default function Footer() {
             réservés.
           </span>
           <Link href="/admin" className="hover:text-gold transition-colors">
-            Administration
+            Connexion
           </Link>
         </div>
       </div>
