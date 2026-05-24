@@ -4,6 +4,7 @@ import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
 import { prisma } from '@/lib/prisma'
 import Link from 'next/link'
+export const revalidate = 0
 
 export const metadata = {
   title: 'Actualités — Soilahoudine Mohamed Ali',
