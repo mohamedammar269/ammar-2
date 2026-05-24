@@ -47,13 +47,23 @@ export const authOptions = {
     maxAge: 30 * 24 * 60 * 60,
   },
   providers: [
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    // }),
+    // GithubProvider({
+    //   clientId: process.env.GITHUB_CLIENT_ID,
+    //   clientSecret: process.env.GITHUB_CLIENT_SECRET,
+    // }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
     CredentialsProvider({
       name: 'credentials',
@@ -71,9 +81,18 @@ export const authOptions = {
         if (!user || !user.hashPassword) {
           throw new Error('Email ou mot de passe incorrect')
         }
-        const valid = await bcrypt.compare(credentials.password, user.hashPassword)
+        const valid = await bcrypt.compare(
+          credentials.password,
+          user.hashPassword,
+        )
         if (!valid) throw new Error('Email ou mot de passe incorrect')
-        return { id: user.id, email: user.email, name: user.name, image: user.image, role: user.role }
+        return {
+          id: user.id,
+          email: user.email,
+          name: user.name,
+          image: user.image,
+          role: user.role,
+        }
       },
     }),
   ],
@@ -84,7 +103,9 @@ export const authOptions = {
         token.role = user.role
       }
       if (account?.provider === 'google' || account?.provider === 'github') {
-        const dbUser = await prisma.user.findUnique({ where: { email: token.email } })
+        const dbUser = await prisma.user.findUnique({
+          where: { email: token.email },
+        })
         if (dbUser) {
           token.id = dbUser.id
           token.role = dbUser.role
