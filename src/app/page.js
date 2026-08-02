@@ -224,7 +224,7 @@ export default async function Home() {
                   <span className="text-gold">Mohamed Ali</span>
                 </h1>
                 <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                  Étudiant en Master IA & Data Science, CEO de Komor-IA et
+                  Ingéniur IA & ML, CEO de Komor-IA et
                   Fondateur de KM-News. Je conçois des solutions d'IA à fort
                   impact pour l'Afrique et la diaspora comorienne.
                 </p>
@@ -435,8 +435,7 @@ export default async function Home() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-white border border-gray-100 p-6">
                 <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                  Étudiant en Master 2 Intelligence Artificielle et Sciences de
-                  Données à l'Université Mohamed Premier d'Oujda, je me
+                  Ingénieur en Intelligence Artificielle et Machine Learning, diplômé de l'Université Mohamed Premier d'Oujda, je me
                   spécialise dans l'IA appliquée, le NLP et l'analyse de
                   données.
                 </p>

@@ -22,7 +22,7 @@ export default function TopBar() {
               CEO de Komor-IA · Fondateur & DG de KM-News
             </p>
             <p className="text-xs text-gold font-medium mt-0.5 hidden md:block">
-              Étudiant en Master IA & Data Science — Université Mohamed Premier
+              Ingénieur IA & ML — Université Mohamed Premier
               d'Oujda
             </p>
           </div>
