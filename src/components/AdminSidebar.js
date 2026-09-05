@@ -9,6 +9,7 @@ const links = [
   { href: '/admin/articles', label: 'Actualités', icon: '✦' },
   { href: '/admin/projets', label: 'Projets', icon: '◈' },
   { href: '/admin/annonces', label: 'Annonces', icon: '◉' },
+  { href: '/createur', label: 'Créateur visuel', icon: '▦' },
 ]
 
 export default function AdminSidebar({ user }) {

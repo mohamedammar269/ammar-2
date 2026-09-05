@@ -28,14 +28,16 @@ export default function LoginPage() {
       setError('Email ou mot de passe incorrect.')
       setLoading(null)
     } else {
-      router.push('/admin')
+      const callbackUrl = new URLSearchParams(window.location.search).get('callbackUrl')
+      router.push(callbackUrl || '/admin')
       router.refresh()
     }
   }
 
   async function handleOAuth(provider) {
     setLoading(provider)
-    await signIn(provider, { callbackUrl: '/admin' })
+    const callbackUrl = new URLSearchParams(window.location.search).get('callbackUrl') || '/admin'
+    await signIn(provider, { callbackUrl })
   }
 
   return (

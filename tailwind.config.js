@@ -6,6 +6,8 @@ module.exports = {
       fontFamily: {
         serif: ['Playfair Display', 'Georgia', 'serif'],
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'sans-serif'],
+        tech: ['Space Grotesk', 'Inter', 'sans-serif'],
       },
       colors: {
         navy: {
